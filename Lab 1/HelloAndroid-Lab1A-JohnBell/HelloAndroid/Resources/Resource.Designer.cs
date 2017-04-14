@@ -57,33 +57,17 @@ namespace HelloAndroid
 			}
 		}
 		
-		public partial class Layout
-		{
-			
-			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
-			
-			static Layout()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Layout()
-			{
-			}
-		}
-		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int helloButtonText = 2130968576;
+			// aapt resource value: 0x7f030000
+			public const int helloButtonText = 2130903040;
 			
-			// aapt resource value: 0x7f040001
-			public const int helloLabelText = 2130968577;
+			// aapt resource value: 0x7f030001
+			public const int helloLabelText = 2130903041;
 			
-			// aapt resource value: 0x7f040002
-			public const int resetButtonText = 2130968578;
+			// aapt resource value: 0x7f030002
+			public const int resetButtonText = 2130903042;
 			
 			static String()
 			{
