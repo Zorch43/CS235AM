@@ -12,22 +12,23 @@ namespace pokeAScreen
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
-
+               SetContentView (Resource.Layout.Main);
+            //instantiate poke button and create click event
             var firstPoke = FindViewById<Button>(Resource.Id.firstPokeButton);
             firstPoke.Click += (sender, e) => {
+                //instantiate intent, add extra, start activity
                 var second = new Intent(this, typeof(SecondActivity));
                 second.PutExtra("poke", true);
-                SetContentView(second);
+                StartActivity(second);
 
             };
-
+            //instantiate hi button and add click event
             var firstHi = FindViewById<Button>(Resource.Id.firstHiButton);
             firstHi.Click += (sender, e) => {
+                //instantiate intent, add extra, start activity
                 var second = new Intent(this, typeof(SecondActivity));
                 second.PutExtra("text", "Hi from screen 1");
-                SetContentView(second);
+                StartActivity(second);
             };
         }
     }

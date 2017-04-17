@@ -12,16 +12,21 @@ using Android.Widget;
 
 namespace pokeAScreen
 {
-    [Activity(Label = "SecondActivity")]
+    [Activity(Label = "SecondActivity", ParentActivity = typeof(MainActivity))]
     public class SecondActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //create object, set view, set action bar to visible
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Second);
+            ActionBar.SetDisplayShowHomeEnabled(true);
+            
+            //create label and assign text based on extras in intent class
             var label = FindViewById<TextView>(Resource.Id.secondText);
-            if (savedInstanceState.GetBoolean("poke")) label.Text = "Poked by Screen 1!";
-            else if (savedInstanceState.GetString("text") != null) label.Text = savedInstanceState.GetString("text");
-            else label.Text = "Nothing sent from screen one :(";
+                if (Intent.GetBooleanExtra("poke", false)) label.Text = "Poked by Screen 1!";
+                else if (Intent.GetStringExtra("text") != null) label.Text = Intent.GetStringExtra("text");
+                else label.Text = "Nothing sent from screen one :(";
         }
     }
 }
